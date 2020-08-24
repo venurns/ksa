@@ -21,11 +21,20 @@
   
   left: 1000px;
   right: 200px;
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
+  
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          animation: shake 15s;
+          animation-iteration-count: infinite;
     }
 
-
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(8deg); }
+  
+  50% { transform: translate(-1px, 2px) rotate(-8deg); }
+  
+  100% { transform: translate(1px, 1px) rotate(8deg); }
+}
 
 .polaroid img,
 .polaroid .img {
