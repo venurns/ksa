@@ -28,13 +28,7 @@
           animation-iteration-count: infinite;
     }
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(8deg); }
-  
-  50% { transform: translate(-1px, 2px) rotate(-8deg); }
-  
-  100% { transform: translate(1px, 1px) rotate(8deg); }
-}
+
 
 .polaroid img,
 .polaroid .img {
@@ -44,10 +38,14 @@
           backface-visibility: hidden;
   background-position: center;
   background-size: cover;
-  -webkit-animation: fade-in 20s ease-in;
-          animation: fade-in 20s ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+
+}
+    @keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(8deg); }
+  
+  50% { transform: translate(-1px, 2px) rotate(-8deg); }
+  
+  100% { transform: translate(1px, 1px) rotate(8deg); }
 }
 #text{
     position: absolute;
