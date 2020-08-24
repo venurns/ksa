@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>😋surprise😋</title>
+</head>
+<script type="text/javascript"src="jquery.js"></script>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Oleo Script Swash Caps');
+
+div#container {height:600px;width:1500px;}
+
+.a {
+width: 250px;
+height:250px;
+
+position:fixed;
+    
+}
+body{
+    background: linear-gradient(to right, #89fffd, #ef32d9); 
+    font-size:2em ;
+    font-style:italic;
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+</style>
+
+<body>
+	
+    <audio hidden="" id="audioPlayer" src="Mbday.mp3" type ="audio/mp3"loop="loop">your browser does not support Html5</audio>
+
+    <script>
+       
+       document.addEventListener("click", function(){
+        // document.getElementById("checker").innerHTML = "Audio playing";
+        document.getElementById("audioPlayer").play();
+    });  
+   
+    </script>
+<span>Hi again la............ wondering what is this???????</span><br>
+ <span>Follow the steps la...</span><br>
+ <span>First of all take you phone</span><br>
+ Plug your lap with headphones la<br>
+ <span>Scan the qr code given below</span><br>
+ <img src="link.jpg"><br>
+ Copy and paste the link in the firefox browser which i told u to install previous week<br>
+ Before pressing enter turn your phone to landscape mode and view in desktop mode<br>
+ No worries la I will be in the call anyway🤗🤗🤗🤗!!!!<br>
+ <a href="https://venu-hh.000webhostapp.com/">click me</a> if you wanna say something la.....!
+<div id="container">
+<img class='a'src="hiro.jpg" >
+</div>
+
+ 
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+    animateDiv($('.a'));
+       
+});
+	$(document).ready(function() {
+    $("#my_audio").get(0).play();
+});
+	window.onload = function() {
+    document.getElementById("my_audio").play();
+}
+
+function makeNewPosition($container) {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $container.height() - 50;
+    var w = $container.width() - 50;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
+}
+
+function animateDiv($target) {
+    var newq = makeNewPosition($target.parent());
+    var oldq = $target.offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $target.animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function() {
+        animateDiv($target);
+    });
+
+};
+
+function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = 0.1;
+
+    var speed = Math.ceil(greatest / speedModifier);
+
+    return speed;
+
+}
+</script>
+</html>
